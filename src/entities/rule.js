@@ -1,19 +1,7 @@
-var Rule = function (name, args, facts) {
-	var name = name;
-	var args = args;
-	var facts = facts;
-
-	this.name = function() {
-		return name;
-	}
-
-	this.args = function() {
-		return args;
-	}
-
-	this.facts = function() {
-		return facts;
-	}
+var Rule = function(name, args, facts) {
+  this.name = name;
+  this.args = args;
+  this.facts = facts;
 }
 
 module.exports = Rule;

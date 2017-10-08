@@ -15,7 +15,7 @@ var
 describe('RuleParser', function() {
   var parser;
   var validRule = 'hijo(X, Y) :- varon(X), padre(Y, X).'
-  
+
   beforeEach(function() {
     parser = new Parsers.Rule();
   });
