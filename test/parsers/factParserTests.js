@@ -13,7 +13,6 @@ describe('FactParser', function() {
   });
 
   describe('Valid Fact', function() {
-
     it('should return true when a valid fact is evaluated', function() {
       expect(parser.isValid('varon(juan).')).to.be.true;
       expect(parser.isValid('padre(juan, pepe).')).to.be.true;
@@ -27,11 +26,10 @@ describe('FactParser', function() {
   });
 
   describe('Parse Fact', function() {
-
-        it('should return a valid Fact when a single argument valid fact is parsed', function() {
-            var expectedFact = new Fact('varon', ['juan']);
-            var parsedFact = parser.parse('varon(juan).');
-            expect(parsedFact).to.be.eql(expectedFact);
-        });
+    it('should return a valid Fact entity when a single argument valid raw fact is parsed', function() {
+      var expectedFact = new Fact('varon', ['juan']);
+      var parsedFact = parser.parse('varon(juan).');
+      expect(parsedFact).to.be.eql(expectedFact);
     });
+  });
 });

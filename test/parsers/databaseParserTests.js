@@ -28,7 +28,6 @@ describe('DatabaseParser', function() {
   });
 
   describe('Parse Database', function() {
-
     it('should return true when a valid fact is evaluated', function() {
       var database = parser.parse(db);
       expect(database.facts).to.have.lengthOf(12);

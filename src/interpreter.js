@@ -47,7 +47,7 @@ var Interpreter = function() {
     } else {
       query = factParser.parse(query);
     }
-    
+
     if (database.includesFact(query)) {
       return true;
     } else {
