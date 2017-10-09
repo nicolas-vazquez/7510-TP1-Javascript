@@ -4,7 +4,6 @@ var assert = require('assert');
 
 var Interpreter = require('../src/interpreter');
 
-
 describe("Interpreter", function () {
 
     var db = [
@@ -45,7 +44,7 @@ describe("Interpreter", function () {
     });
 
 
-    /*describe('Interpreter Facts', function () {
+    describe('Interpreter Facts', function () {
 
         it('varon(juan) should be true', function () {
             assert(interpreter.checkQuery('varon(juan)'));
@@ -69,9 +68,9 @@ describe("Interpreter", function () {
 
         // TODO: Add more tests
 
-    });*/
+    });
 
-    /*describe('Interpreter Rules', function () {
+    describe('Interpreter Rules', function () {
 
         it('hijo(pepe, juan) should be true', function () {
             assert(interpreter.checkQuery('hijo(pepe, juan)') === true);
@@ -85,9 +84,8 @@ describe("Interpreter", function () {
 
         // TODO: Add more tests
 
-    });*/
+    });
 
 
 });
-
 

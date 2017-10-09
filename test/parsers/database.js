@@ -2,18 +2,10 @@ var expect = require("chai").expect;
 var should = require('should');
 var assert = require('assert');
 
-var
-  Entities = {
-    Fact: require('../../src/entities/fact'),
-    Rule: require('../../src/entities/rule')
-  },
-  Parsers = {
-    Fact: require('../../src/parsers/fact'),
-    Database: require('../../src/parsers/database')
-  };
+var DatabaseParser = require('../../src/parsers/databaseParser');
 
 describe('DatabaseParser', function() {
-  var parser;
+  var parser = null;
   var db = [
     "varon(juan).",
     "varon(pepe).",
@@ -32,14 +24,15 @@ describe('DatabaseParser', function() {
   ];
 
   beforeEach(function() {
-    parser = new Parsers.Database();
+    parser = new DatabaseParser();
   });
 
   describe('Parse Database', function() {
 
     it('should return true when a valid fact is evaluated', function() {
       var database = parser.parse(db);
-      expect(true).to.be.true;
+      expect(database.facts).to.have.lengthOf(12);
+      expect(database.rules).to.have.lengthOf(2);
     });
   });
 });

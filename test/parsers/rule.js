@@ -2,22 +2,14 @@ var expect = require("chai").expect;
 var should = require('should');
 var assert = require('assert');
 
-var
-  Entities = {
-    Fact: require('../../src/entities/fact'),
-    Rule: require('../../src/entities/rule')
-  },
-  Parsers = {
-    Fact: require('../../src/parsers/fact'),
-    Rule: require('../../src/parsers/rule')
-  };
+var RuleParser = require('../../src/parsers/ruleParser');
 
 describe('RuleParser', function() {
-  var parser;
+  var parser = null;
   var validRule = 'hijo(X, Y) :- varon(X), padre(Y, X).'
 
   beforeEach(function() {
-    parser = new Parsers.Rule();
+    parser = new RuleParser();
   });
 
   describe('Valid Rule', function() {

@@ -2,20 +2,14 @@ var expect = require("chai").expect;
 var should = require('should');
 var assert = require('assert');
 
-var
-  Entities = {
-    Fact: require('../../src/entities/fact'),
-    Rule: require('../../src/entities/rule')
-  },
-  Parsers = {
-    Fact: require('../../src/parsers/fact')
-  };
+var Fact = require('../../src/entities/fact');
+var FactParser = require('../../src/parsers/factParser');
 
 describe('FactParser', function() {
-  var parser;
+  var parser = null;
 
   beforeEach(function() {
-    parser = new Parsers.Fact();
+    parser = new FactParser();
   });
 
   describe('Valid Fact', function() {
@@ -35,7 +29,7 @@ describe('FactParser', function() {
   describe('Parse Fact', function() {
 
         it('should return a valid Fact when a single argument valid fact is parsed', function() {
-            var expectedFact = new Entities.Fact('varon', ['juan']);
+            var expectedFact = new Fact('varon', ['juan']);
             var parsedFact = parser.parse('varon(juan).');
             expect(parsedFact).to.be.eql(expectedFact);
         });
